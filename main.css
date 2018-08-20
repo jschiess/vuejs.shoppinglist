@@ -1,0 +1,55 @@
+.item{
+	display: inline-flex;
+	
+	margin: 1em;
+}
+.item a{
+	text-align: center;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.col{
+	background-color: pink;
+	width: 10em;
+	padding: 2em;
+	color: black
+}
+.bor{
+	background-color: black;
+	width: 10em;
+	color: pink;
+	padding: 2em;
+}
+
+
+
+header{
+	background-color: gray;
+	widows: 100%;
+	padding: 1em;
+}
+body{
+	margin: 0;
+
+}
+
+.closebtn{
+	background-color: red;
+	color: black;
+	font-family: impact;
+	text-align: center;
+	font-weight: lighter;
+	width: 30px;
+	height: 20px;
+	position: absolute;
+	z-index: 999;
+}
+
+#newentry{
+	margin: 0 auto;
+}
+
+.closebtn:hover{
+	background-color: brown;
+}

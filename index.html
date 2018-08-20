@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title> checklist </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+	<script src="vue.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="main.js"></script>	
+</head>
+<body>
+	<header>
+		<input type='text' name="newentry" id="newentry">
+		<input type="submit" name="" id="submit">
+	</header>
+	<div id="vueChecklist" style='display:none;'>
+
+		<div  id="item" class="item" v-for="a, n in checklist">
+				<div class='closebtn' v-on:click=' del(a, n)'>
+					X
+				</div>
+				<a v-on:click=" kek(a, n) " v-if='a' class='col'>{{ n }}</a>
+				<a v-on:click=" kek(a, n) " v-else class="bor">{{ n }}</a>
+		</div>
+
+	</div>
+</body>
+
+</html>
