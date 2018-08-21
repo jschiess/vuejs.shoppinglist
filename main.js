@@ -52,24 +52,39 @@ $( document ).ready( () => {
 			getobj: function() {
 				return this.checklist;
 			},
+			//deletes the element with ID "n"
 			del: function(a, n){
+
 				var tempobj = this.checklist
-				console.log(n);
-				
+
 				delete tempobj[n]
-				//vue.setobj(tempobj)
+
 
 				fire.set(tempobj)
 
 			}
 		}
 	})
+
 	
 	$('#submit').on('click', function(data) {
 		var kek = $('#newentry').val();
 
 		var tempobj = vue.getobj()
-		tempobj[kek] = true
+		if(tempobj){
+
+			tempobj[kek] = false
+		} else{
+			tempobj = {
+				filler: false
+			}
+			tempobj[kek] = tempobj.filler;
+			delete tempobj.filler;
+
+		}
+		console.log(tempobj);
+		
+		//tempobj[kek] = true
 
 		fire.set(tempobj)
 	
