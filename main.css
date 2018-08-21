@@ -7,15 +7,19 @@
 	text-align: center;
 	width: 100%;
 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.2em;
+	font-weight: 100;
 }
 
 .col{
-	background-color: blue;
+	background-color: white;
 	width: 10em;
 	padding: 2em;
-	color: black
+	color: rgb(145, 28, 139);
+	border: solid 2px black
 }
 .bor{
+	border: solid 2px black;
 	background-color: black;
 	width: 10em;
 	color: pink;
@@ -25,10 +29,14 @@
 
 
 header{
-	background-color: gray;
+	background-color: rgb(182, 182, 182);
+	border-bottom: 1.4px solid gray;
 	widows: 100%;
 	padding: 1em;
+	display: flex;
+	justify-content: center
 }
+
 body{
 	margin: 0;
 

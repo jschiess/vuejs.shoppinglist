@@ -67,9 +67,9 @@ $( document ).ready( () => {
 	})
 
 	
-	$('#submit').on('click', function(data) {
+	$('#forminp').on('submit', function(data) {
 		var kek = $('#newentry').val();
-
+		data.preventDefault();
 		var tempobj = vue.getobj()
 		if(tempobj){
 
