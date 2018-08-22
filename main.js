@@ -68,11 +68,11 @@ $( document ).ready( () => {
 
 	
 	$('#forminp').on('submit', function(data) {
-		var kek = $('#newentry').val();
 		data.preventDefault();
+		var kek = $('#newentry').val();
 		var tempobj = vue.getobj()
 		if(tempobj){
-
+			
 			tempobj[kek] = false
 		} else{
 			tempobj = {
@@ -80,19 +80,31 @@ $( document ).ready( () => {
 			}
 			tempobj[kek] = tempobj.filler;
 			delete tempobj.filler;
-
+			
 		}
 		console.log(tempobj);
 		
 		//tempobj[kek] = true
-
-		fire.set(tempobj)
-	
+		try{
+			
+			fire.set(tempobj)
+		} catch{
+			alert("invalid characters in Input field.");
+			fire.once('value', (snap) => {	
+				vue.checklist = snap.val()
+			});
+			
+		}
 		
-				
+		
+		$('#newentry').val("");
+		
 	})
-
+	
 	$('#vueChecklist').toggle()
+	
 
 
+	
 });
+

@@ -1,28 +1,26 @@
 .item{
 	display: inline-flex;
-	
 	margin: 1em;
 }
 .item a{
 	text-align: center;
 	width: 100%;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: monospace;
 	font-size: 1.2em;
 	font-weight: 100;
+	color: black;
 }
 
 .col{
-	background-color: white;
+	background-color: yellow;
 	width: 10em;
 	padding: 2em;
-	color: rgb(145, 28, 139);
-	border: solid 2px black
+	border: solid 1.4px rgb(92, 92, 92)
 }
 .bor{
-	border: solid 2px black;
-	background-color: black;
+	border: solid 1.4px rgb(92, 92, 92);
+	background-color: white;
 	width: 10em;
-	color: pink;
 	padding: 2em;
 }
 
