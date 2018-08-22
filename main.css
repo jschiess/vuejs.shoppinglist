@@ -36,7 +36,7 @@ header{
 }
 header input[type="text"]{
 	border: none;
-	font-family: monospace;
+	font-family: monospace	;
 	height: 1.2em;
 	padding: 0.3em 1em;
 
