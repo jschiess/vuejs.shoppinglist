@@ -12,7 +12,7 @@
 }
 
 .col{
-	background-color: yellow;
+	background-color: #dadada;
 	width: 10em;
 	padding: 2em;
 	border: solid 1.4px rgb(92, 92, 92)
@@ -27,12 +27,19 @@
 
 
 header{
-	background-color: rgb(182, 182, 182);
+	background-color: #ededed;
 	border-bottom: 1.4px solid gray;
 	widows: 100%;
 	padding: 1em;
 	display: flex;
 	justify-content: center
+}
+header input[type="text"]{
+	border: none;
+	height: 1.2em;
+	padding: 0.3em 1em;
+
+	font-size: 1.2em;
 }
 
 body{
