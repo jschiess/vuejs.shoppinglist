@@ -1,6 +1,6 @@
-$( document ).ready( () => {
+$(document).ready(() => {
 
-	
+
 	var config = {
 		apiKey: "AIzaSyDfuS1hqIsv-4eMAO9ltGwdIjC8LBJcHjw",
 		authDomain: "vue-checklist.firebaseapp.com",
@@ -9,51 +9,52 @@ $( document ).ready( () => {
 		storageBucket: "vue-checklist.appspot.com",
 		messagingSenderId: "703439171309"
 	};
-	
+
 	firebase.initializeApp(config);
-	
+
 	const fire = firebase.database().ref().child('object/');
-	
+
 
 
 	let myobj = {
 	}
-	
-	fire.on('value', (snap) => {	
+
+	fire.on('value', (snap) => {
 		vue.checklist = snap.val()
+
 	});
-	
-	
+
+
 	var vue = new Vue({
 		el: "#vueChecklist",
 		data: {
 			checklist: myobj,
 			obj: 'lel'
-		}, 
+		},
 		methods: {
-			setobj: function(data) {
+			setobj: function (data) {
 				this.checklist = data
 			},
-			kek: function(a, n) {
+			kek: function (a, n) {
 				console.log('function kek activated');
-				
+
 				var tempobj = this.checklist
-			
-				if(this.checklist[n]) {
-					tempobj[n] = false; 
-				} else{
+
+				if (this.checklist[n]) {
+					tempobj[n] = false;
+				} else {
 					tempobj[n] = true;
 				}
-				
+
 				//this.checklist = tempobj
 				fire.set(vue.getobj())
 
 			},
-			getobj: function() {
+			getobj: function () {
 				return this.checklist;
 			},
 			//deletes the element with ID "n"
-			del: function(a, n){
+			del: function (a, n) {
 
 				var tempobj = this.checklist
 
@@ -66,45 +67,46 @@ $( document ).ready( () => {
 		}
 	})
 
+
 	
-	$('#forminp').on('submit', function(data) {
+	$('#forminp').on('submit', function (data) {
 		data.preventDefault();
 		var kek = $('#newentry').val();
 		var tempobj = vue.getobj()
-		if(tempobj){
-			
+		if (tempobj) {
+
 			tempobj[kek] = false
-		} else{
+		} else {
 			tempobj = {
 				filler: false
 			}
 			tempobj[kek] = tempobj.filler;
 			delete tempobj.filler;
-			
+
 		}
 		console.log(tempobj);
-		
+
 		//tempobj[kek] = true
-		try{
-			
+		try {
+
 			fire.set(tempobj)
 		} catch{
 			alert("invalid characters in Input field.");
-			fire.once('value', (snap) => {	
+			fire.once('value', (snap) => {
 				vue.checklist = snap.val()
 			});
-			
+
 		}
-		
-		
+
+
 		$('#newentry').val("");
-		
+
 	})
-	
+
 	$('#vueChecklist').toggle()
-	
 
 
-	
+
+
 });
 
