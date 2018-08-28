@@ -20,11 +20,22 @@
 		
 	</header>
 	<div id="vueChecklist" style='display:none;'>
-			
 			<div  id="item" class="item" v-for="a, n in checklist">
-				<div class='closebtn' v-on:click=' del(a, n)'>
+				<!--
+					<div class="overlay-input">
+						<a>Are you Sure?</a>
+						<div style="display: inline-flex">
+							<button v-on:click=' del(a, n)'>Yes</button>
+							<button class="no">No</button>
+						</div>
+					</div> s
+					<div class="overlay-fill"></div>
+				-->
+					
+				<div class='closebtn' v-on:click=" del(a, n)" >
 					X
 				</div>
+
 				<a v-on:click=" kek(a, n) " v-if='a' class='col'>{{ n }}</a>
 				<a v-on:click=" kek(a, n) " v-else class="bor">{{ n }}</a>
 			</div>

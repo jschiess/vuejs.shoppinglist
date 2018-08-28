@@ -17,7 +17,7 @@ $(document).ready(() => {
 
 
 	let myobj = {
-	}
+	};
 
 	fire.on('value', (snap) => {
 		vue.checklist = snap.val()
@@ -55,18 +55,39 @@ $(document).ready(() => {
 			},
 			//deletes the element with ID "n"
 			del: function (a, n) {
+				/*
+				$('.overlay-fill').toggle()
+				$('.overlay-input').toggle()
+				*/
 
 				var tempobj = this.checklist
 
 				delete tempobj[n]
-
-
 				fire.set(tempobj)
-
+				console.log("deleted")
 			}
 		}
 	})
 
+
+	
+	// Onclick functions
+	// Pressing on the Black causes it to disapear
+	$('.overlay-fill').on("click", () => {
+
+		$('.overlay-fill').toggle()
+		$('.overlay-input').toggle()	
+	});
+
+	$('.no').on("click", () => {
+		$('.overlay-fill').toggle()
+		$('.overlay-input').toggle()
+		
+	});
+
+	$('closebtn').on("click", function() {
+		$('overlay-fill').toggle()
+	})
 
 	
 	$('#forminp').on('submit', function (data) {

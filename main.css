@@ -57,7 +57,7 @@ body{
 	width: 30px;
 	height: 20px;
 	position: absolute;
-	z-index: 999;
+	z-index: 997;
 }
 
 #newentry{
@@ -66,4 +66,32 @@ body{
 
 .closebtn:hover{
 	background-color: brown;
+}
+.overlay-fill{
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: block;
+	z-index: 998;
+	width: 100%;
+	min-height: 100%;
+	display: none;
+}
+
+.overlay-input{
+	z-index: 999;
+	display: none;
+	position: absolute;
+	background-color: White;
+	border: 1px solid #afafaf;
+	width: 20%;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 30%	;
+	padding: 1.5em 2em;
+}
+.overlay-input button{
+	margin-left: 1em; 
 }
